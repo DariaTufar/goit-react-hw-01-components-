@@ -1,48 +1,88 @@
- 
-import PropTypes from 'prop-types';
-import css from  './Profile.module.css'
+import { Box } from 'components/Box';
+import { PropTypes } from 'prop-types';
+
+import { Avatar, UserName, Info, Label, Quantity } from './Profile.styled';
+import { theme } from 'utils';
+import { numberToLocale } from 'utils';
 
 export const Profile = ({ avatar, location, stats, tag, username }) => {
   return (
-    <div className="profile">
-      <div className="description">
-        <img
-                  src={avatar}
-                  alt="User avatar"
-                  className={css.avatar}
-        />
-        <p className="name">{username}</p>
-        <p className="tag">{tag}</p>
-              <p className="location">{location }</p>
-      </div>
+    <Box
+      bg={theme.colors.bgLight}
+      boxShadow="primary"
+      borderRadius={theme.radii.md}
+    >
+      <Box as="section" p={theme.sizes.m}>
+        <Avatar src={avatar} alt="User avatar" width={theme.sizes.xl} />
+        <UserName>{username}</UserName>
+        <Info>@{tag}</Info>
+        <Info>{location}</Info>
+      </Box>
 
-      <ul className="stats">
-        <li>
-          <span className="label">Followers </span>
-          <span className="quantity">{stats.followers}</span>
-        </li>
-        <li>
-          <span className="label">Views </span>
-          <span className="quantity">{stats.views}</span>
-        </li>
-        <li>
-          <span className="label">Likes </span>
-          <span className="quantity">{stats.views}</span>
-        </li>
-      </ul>
-    </div>
+      <Box
+        as="ul"
+        display="grid"
+        gridTemplateColumns="1fr 1fr 1fr"
+        bg={theme.colors.bgLight}
+        boxShadow="primary"
+        borderRadius={theme.radii.md}
+      >
+        <Box
+          as="li"
+          display="flex"
+          flexDirection="column"
+          justifyContent="center"
+          alignItems="center"
+          gridGap={2}
+          padding={2}
+          borderTop="profile"
+          borderRight="profile"
+        >
+          <Label>Followers </Label>
+          <Quantity>{numberToLocale(stats.followers)}</Quantity>
+        </Box>
+
+        <Box
+          as="li"
+          display="flex"
+          flexDirection="column"
+          justifyContent="center"
+          alignItems="center"
+          gridGap={2}
+          padding={2}
+          borderTop="profile"
+          borderRight="profile"
+        >
+          <Label>Views </Label>
+          <Quantity> {numberToLocale(stats.views)}</Quantity>
+        </Box>
+
+        <Box
+          as="li"
+          display="flex"
+          flexDirection="column"
+          justifyContent="center"
+          alignItems="center"
+          gridGap={2}
+          padding={2}
+          borderTop="profile"
+        >
+          <Label>Likes </Label>
+          <Quantity>{numberToLocale(stats.views)}</Quantity>
+        </Box>
+      </Box>
+    </Box>
   );
 };
 
-
 Profile.propTypes = {
-    avatar: PropTypes.string.isRequired,
-    username: PropTypes.string.isRequired,
-    tag: PropTypes.string.isRequired,
-    location: PropTypes.string.isRequired,
-    stats: PropTypes.exact({
-        followers: PropTypes.number.isRequired,
-        views: PropTypes.number.isRequired,
-        likes: PropTypes.number.isRequired
-    }),
-}
+  avatar: PropTypes.string.isRequired,
+  username: PropTypes.string.isRequired,
+  tag: PropTypes.string.isRequired,
+  location: PropTypes.string.isRequired,
+  stats: PropTypes.exact({
+    followers: PropTypes.number,
+    views: PropTypes.number,
+    likes: PropTypes.number,
+  }),
+};

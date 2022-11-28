@@ -3,14 +3,19 @@ export const theme = {
     black: '#000',
     white: '#fff',
     text: '#E0F2F1',
-    primary: '##B2EBF2',
-    accent: '#609',
-     
-    bgPrimary: '#BEF3F0',
-    bgAccent: '#E88AEE',
-    bgLight: '#F6F398',
-    bgStatusOnline: '#18FFFF',
-    bgStatusOffline: '#C2185B',
+    primary: '#B2EBF2',
+    primaryDark: '#19c8e2',
+    accent: '#942e61',
+    accentLight: '#e4a7c6',
+    accentTable: '#1397ac',
+    grey: '#a8a8a8',
+
+    bgPrimary: '#b8eaf3',
+    bgAccent: '#e4a7c6',
+    bgLight: '#dcf5f9',
+    bgMediumLight: '#caf2f9',
+    bgStatusOnline: '#19c8e2',
+    bgStatusOffline: '#a4326b',
   },
   space: [0, 2, 4, 8, 16, 32, 64, 128, 256],
 
@@ -58,6 +63,7 @@ export const theme = {
   borders: {
     none: 'none',
     normal: '1px solid',
+    profile: '1px outset rgba(178,235,242,0.46)',
   },
 
   radii: {
@@ -67,4 +73,9 @@ export const theme = {
     lg: '16px',
     round: '50%',
   },
+
+  shadows: {
+    primary: '9px 3px 25px -4px rgba(25,200,226,0.56)',
+  },
+  breakpoints: ['40em', '52em', '64em', '80em'],
 };

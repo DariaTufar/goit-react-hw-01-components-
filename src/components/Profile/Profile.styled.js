@@ -13,7 +13,7 @@ export const Avatar = styled.img`
 
 export const UserName = styled.p`
   margin-bottom: ${p => p.theme.space[2]}px;
-  font-size: ${p => p.theme.fontSizes.m};
+  font-size: ${p => p.theme.fontSizes.l};
   font-weight: bold;
   text-align: center;
   color: ${p => p.theme.colors.accent};

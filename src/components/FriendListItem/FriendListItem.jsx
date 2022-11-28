@@ -6,11 +6,11 @@ import { Status, Name, Avatar } from './FriendListItem.styled';
 export const FriendListItem = ({ avatar, name, isOnline }) => {
   return (
     <Box
+      as="li"
       bg={theme.colors.bgLight}
       boxShadow="primary"
       borderRadius={theme.radii.md}
       width={theme.sizes.xxxl}
-      as="li"
       display="flex"
       justifyContent="center"
       alignItems="center"

@@ -25,19 +25,19 @@ export const App = () => {
         1 / 4, // 25% from the next breakpoint and up
       ]}
     >
-          <Profile
+        <Profile
             username={user.username}
             tag={user.tag}
             location={user.location}
             avatar={user.avatar}
             stats={user.stats}
-          />
+        />
 
-          <Statistics title="Upload stats" stats={statData} />
-       
+        <Statistics title="Upload stats" stats={statData} />
+
         <FriendList friends={friends} />
-     
-      <TransactionHistory transactions={transactions} />
+
+        <TransactionHistory transactions={transactions} />
     </Box>
   );
 };

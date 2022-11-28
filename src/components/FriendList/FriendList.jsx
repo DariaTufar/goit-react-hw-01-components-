@@ -6,14 +6,12 @@ import { theme } from 'utils';
 export const FriendList = ( {friends}) => {
     return (
       <Box
+        as="ul"
         display="flex"
         flexDirection="column"
         justifyContent="center"
         alignItems="center"
         gridGap={5}
-        as="ul"
-     
-         
         borderRadius={theme.radii.md}
         width={theme.sizes.xxxl}
       >

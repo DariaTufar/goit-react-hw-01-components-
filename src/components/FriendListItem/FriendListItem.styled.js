@@ -25,8 +25,8 @@ export const Avatar = styled.img`
 `;
 
 export const Name = styled.p`
-font-size: ${ p => p.theme.fontSizes.l};
-color: ${p =>p.theme.colors.accent};
+  font-size: ${ p => p.theme.fontSizes.l};
+  color: ${p =>p.theme.colors.accent};
 `;
 
 Status.propTypes = {
@@ -36,5 +36,3 @@ Status.propTypes = {
 Avatar.propTypes = {
     src: PropTypes.string.isRequired,
 };
-
- 

@@ -1,1 +1,1 @@
-import * from '/FriendListItem'
+export * from '/FriendListItem'

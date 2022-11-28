@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { theme } from 'utils';
+ 
 
 export const Title = styled.h2`
   padding-top: ${p => p.theme.space[4]}px;
